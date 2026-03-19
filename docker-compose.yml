@@ -1,0 +1,15 @@
+name: traiectories_project
+services:
+  postgres_db:
+    image: postgis/postgis:15-3.4
+    container_name: aero_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./demodb:/demodb
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
